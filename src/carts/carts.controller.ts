@@ -10,16 +10,19 @@ export class CartsController {
 
   @MessagePattern("carts.get")
   get(@Payload() username: string) {
+    console.log("username", username);
     return this.cartsService.get(username);
   }
 
   @MessagePattern("carts.update")
   update(@Payload() updateCartDto: any) {
+    console.log("updateCartDto", updateCartDto);
     return this.cartsService.update(updateCartDto.username, updateCartDto.carts);
   }
 
   @MessagePattern("carts.remove")
   remove(@Payload() username: string) {
+    console.log("username", username);
     return this.cartsService.remove(username);
   }
 }
