@@ -20,9 +20,9 @@ export class CartsController {
     return this.cartsService.update(updateCartDto.username, updateCartDto.carts);
   }
 
-  @MessagePattern("carts.remove")
+  @MessagePattern("carts.orders.clean")
   remove(@Payload() username: string) {
-    console.log("username", username);
+    console.log("clean cart", username);
     return this.cartsService.remove(username);
   }
 }
