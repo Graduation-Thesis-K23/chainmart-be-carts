@@ -853,12 +853,12 @@
     consola "^2.15.0"
     node-fetch "^2.6.1"
 
-"@redis/bloom@1.2.0":
+"@redis/bloom@1.2.0", "@redis/bloom@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@redis/bloom/-/bloom-1.2.0.tgz"
   integrity sha512-HG2DFjYKbpNmVXsa0keLHp/3leGJz1mjh09f2RLGGLQZzSHpkmZWuwJbAvo3QcRY8p80m5+ZdXZdYOSBLlp7Cg==
 
-"@redis/client@1.5.8":
+"@redis/client@1.5.8", "@redis/client@^1.5.8":
   version "1.5.8"
   resolved "https://registry.npmjs.org/@redis/client/-/client-1.5.8.tgz"
   integrity sha512-xzElwHIO6rBAqzPeVnCzgvrnBEcFL1P0w8P65VNLRkdVW8rOE58f52hdj0BDgmsdOm4f1EoXPZtH4Fh7M/qUpw==
@@ -867,22 +867,22 @@
     generic-pool "3.9.0"
     yallist "4.0.0"
 
-"@redis/graph@1.1.0":
+"@redis/graph@1.1.0", "@redis/graph@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@redis/graph/-/graph-1.1.0.tgz"
   integrity sha512-16yZWngxyXPd+MJxeSr0dqh2AIOi8j9yXKcKCwVaKDbH3HTuETpDVPcLujhFYVPtYrngSco31BUcSa9TH31Gqg==
 
-"@redis/json@1.0.4":
+"@redis/json@1.0.4", "@redis/json@^1.0.4":
   version "1.0.4"
   resolved "https://registry.npmjs.org/@redis/json/-/json-1.0.4.tgz"
   integrity sha512-LUZE2Gdrhg0Rx7AN+cZkb1e6HjoSKaeeW8rYnt89Tly13GBI5eP4CwDVr+MY8BAYfCg4/N15OUrtLoona9uSgw==
 
-"@redis/search@1.1.3":
+"@redis/search@1.1.3", "@redis/search@^1.1.3":
   version "1.1.3"
   resolved "https://registry.npmjs.org/@redis/search/-/search-1.1.3.tgz"
   integrity sha512-4Dg1JjvCevdiCBTZqjhKkGoC5/BcB7k9j99kdMnaXFXg8x4eyOIVg9487CMv7/BUVkFLZCaIh8ead9mU15DNng==
 
-"@redis/time-series@1.0.4":
+"@redis/time-series@1.0.4", "@redis/time-series@^1.0.4":
   version "1.0.4"
   resolved "https://registry.npmjs.org/@redis/time-series/-/time-series-1.0.4.tgz"
   integrity sha512-ThUIgo2U/g7cCuZavucQTQzA9g9JbDDY2f64u3AbAoz/8vE2lt2U37LamDUVChhaDA3IRT9R6VvJwqnUfTJzng==
@@ -1767,7 +1767,21 @@ cache-manager-redis-store@^3.0.1:
   dependencies:
     redis "^4.3.1"
 
-cache-manager@^5.2.3:
+cache-manager-redis-yet@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/cache-manager-redis-yet/-/cache-manager-redis-yet-4.1.2.tgz#fa04df1a979a42585393a7a9918168978a7211ec"
+  integrity sha512-pM2K1ZlOv8gQpE1Z5mcDrfLj5CsNKVRiYua/SZ12j7LEDgfDeFVntI6JSgIw0siFSR/9P/FpG30scI3frHwibA==
+  dependencies:
+    "@redis/bloom" "^1.2.0"
+    "@redis/client" "^1.5.8"
+    "@redis/graph" "^1.1.0"
+    "@redis/json" "^1.0.4"
+    "@redis/search" "^1.1.3"
+    "@redis/time-series" "^1.0.4"
+    cache-manager "^5.2.2"
+    redis "^4.6.7"
+
+cache-manager@^5.2.2, cache-manager@^5.2.3:
   version "5.2.3"
   resolved "https://registry.npmjs.org/cache-manager/-/cache-manager-5.2.3.tgz"
   integrity sha512-9OErI8fksFkxAMJ8Mco0aiZSdphyd90HcKiOMJQncSlU1yq/9lHHxrT8PDayxrmr9IIIZPOAEfXuGSD7g29uog==

@@ -1,25 +1,22 @@
-import { CacheModule, CacheStore } from "@nestjs/cache-manager";
-import { Global, Module } from "@nestjs/common";
+import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { redisStore } from "cache-manager-redis-store";
+import { CacheModule } from "@nestjs/cache-manager";
+import { redisStore } from "cache-manager-redis-yet";
+import type { RedisClientOptions } from "redis";
 
-@Global()
 @Module({
   imports: [
-    CacheModule.registerAsync({
+    CacheModule.registerAsync<RedisClientOptions>({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: async (config: ConfigService) => {
-        const store = await redisStore({
-          socket: {
-            host: config.get("REDIS_HOST"),
-            port: +config.get("REDIS_PORT"),
-          },
-        });
-
+      useFactory: async (configService: ConfigService) => {
+        console.log(configService.get<string>("REDIS_HOST"));
         return {
-          store: store as unknown as CacheStore,
+          host: configService.get<string>("REDIS_HOST"),
+          port: +configService.get<number>("REDIS_PORT"),
+          // password: configService.get<string>("REDIS_PASSWORD"),
           isGlobal: true,
+          // store: redisStore,
         };
       },
     }),
