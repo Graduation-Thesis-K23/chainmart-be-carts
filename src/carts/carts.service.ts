@@ -15,6 +15,10 @@ export class CartsService {
     private readonly cartRepository: Repository<Cart>,
   ) {}
 
+  async healthCheck() {
+    return "carts service is working";
+  }
+
   async get(username: string) {
     // if not exist in redis, get from db
 

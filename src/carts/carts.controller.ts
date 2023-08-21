@@ -8,6 +8,12 @@ import { ExceptionFilter } from "src/filters/rpc-exception.filter";
 export class CartsController {
   constructor(private readonly cartsService: CartsService) {}
 
+  @MessagePattern("carts.health-check")
+  healthCheck() {
+    console.log("health.check carts");
+    return this.cartsService.healthCheck();
+  }
+
   @MessagePattern("carts.get")
   get(@Payload() username: string) {
     console.log("username", username);
